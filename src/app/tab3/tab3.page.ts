@@ -6,7 +6,43 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  a: number[][] = [];
+  n: number = 0;
+  m: number = 0;
+  constructor() { }
 
-  constructor() {}
+  arrayras(n:any){
+    function getRandomArbitrary(min:number, max:number) {
+      return Math.random() * (max - min) + min;
+    }
+    try{
+      this.n=parseInt(n);
+      if((isNaN(this.n) == true)){
+        throw new Error('Parametrs is not a number!');
+      }
+      if(n <= 0){
+        throw new Error ('Parametrs less than zero');
+      }
+      let i: number = 0, j: number = 0;
+      this.a = Array(this.n);
+      console.log('Array created');
+      for(i = 0; i < this.n; i++){
+        this.a[i] = Array(this.n);
+        for(j= 0; j < this.n; j++){
+          let aa: number = (getRandomArbitrary(-10 ,11));
+          this.a[i][j] = parseFloat(aa.toFixed(0));
+        }
+      }
+    }
+    catch (error) {
+      console.log(error);
+      
+    }
+  }
+  getColor(j:number){
+    return j>0 ? 'green' : 'red';
+  }
+  ngOnInit(){
 
+  }
 }
