@@ -17,7 +17,7 @@
       <ion-card-title>Завдання №3</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p class="p_background">Задано три числа. Якщо хоч одне з більше за 5, то знайти куб суми. В іншому випадку – суму .</p>
+      <p class="p_background">Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору усі однакові за модулем елементи.</p>
       <ion-item>
         <ion-label position="floating">N</ion-label>
         <ion-input type="number" id="n" value="3" #Inputn></ion-input>
@@ -26,11 +26,11 @@
         <ion-label position="floating">Модуль</ion-label>
         <ion-input type="number" id="m" value="2" #Inputm></ion-input>
       </ion-item>
-      <ion-button expand="block" (click)="arrayras(Inputn.value)">Розрахунок</ion-button>
+      <ion-button expand="block" (click)="arrayras(Inputn.value, Inputm.value)">Розрахунок</ion-button>
       <ion-item>
         <ion-grid>
           <ion-row *ngFor = "let i of a">
-            <ion-col *ngFor = "let j of i"> {{ j }}</ion-col>
+            <ion-col *ngFor = "let j of i" [ngStyle] = "{backgroundColor: getColor(j)} "> {{ j }}</ion-col>
           </ion-row>
         </ion-grid>
       </ion-item>

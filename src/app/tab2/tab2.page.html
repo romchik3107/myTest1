@@ -1,17 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Лаболаторная робота №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав: студент Кандиба Роман КН-32
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Завдання №2</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="p_background">На заданому проміжку чисел [a,b] знайдіть кількість чисел, які кратні 44, непарні і при діленні на 5 дають в остачі 3.</p>
+        <ion-item>
+          <ion-label position="floating">Перше число</ion-label>
+          <ion-input type="number" id="a" value="1" #Inputa></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Друге число</ion-label>
+          <ion-input type="number" id="b" value="2" #Inputb></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="ras(Inputa.value,Inputb.value)">Розрахунок</ion-button>
+        <ion-item>
+          <p>Результат обчислень {{c}}</p>
+        </ion-item>
+      </ion-card-content>
+  </ion-card>
 </ion-content>

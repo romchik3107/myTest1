@@ -11,12 +11,13 @@ export class Tab3Page {
   m: number = 0;
   constructor() { }
 
-  arrayras(n:any){
+  arrayras(n:any, m:any){
     function getRandomArbitrary(min:number, max:number) {
       return Math.random() * (max - min) + min;
     }
     try{
       this.n=parseInt(n);
+      this.m=parseInt(m);
       if((isNaN(this.n) == true)){
         throw new Error('Parametrs is not a number!');
       }
@@ -40,7 +41,8 @@ export class Tab3Page {
     }
   }
   getColor(j:number){
-    return j>0 ? 'green' : 'red';
+
+    return ((j==this.m) || (j==this.m/-1)) ? 'green' : 'red';
   }
   ngOnInit(){
 
