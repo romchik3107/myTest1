@@ -22,7 +22,7 @@ export class Tab1Page {
       }
       
       if((this.a > 5) || (this.b > 5) || (this.c > 5))
-        this.d = Math.pow((this.a + this.b + this.c), 2);
+        this.d = Math.pow((this.a + this.b + this.c), 3);
       else 
         this.d = (this.a + this.b + this.c)
     }

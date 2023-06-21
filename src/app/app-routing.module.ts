@@ -9,7 +9,15 @@ const routes: Routes = [
   {
     path: 'graph',
     loadChildren: () => import('./graph/graph.module').then( m => m.GraphPageModule)
+  },  {
+    path: 'file',
+    loadChildren: () => import('./file/file.module').then( m => m.FilePageModule)
+  },
+  {
+    path: 'abstract-class',
+    loadChildren: () => import('./abstract-class/abstract-class.module').then( m => m.AbstractClassPageModule)
   }
+
 ];
 @NgModule({
   imports: [
