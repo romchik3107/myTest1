@@ -18,6 +18,7 @@ export class AbstractClassPage implements OnInit {
     return Math.floor(Math.random() * Math.floor(max) +1);
   }
   ras(nn:any){
+    this.sum =0;
     this.Clth = new Array();
     let n = parseInt (nn);
     for (let i =0; i<n; i++){
