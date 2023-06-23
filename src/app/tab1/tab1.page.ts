@@ -11,6 +11,7 @@ export class Tab1Page {
   b: number = 0;
   c: number = 0;
   d: number = 0;
+  num: number = 0;
   ras(a:any, b:any, c:any){
     try{
       this.a=parseFloat(a);
@@ -25,11 +26,13 @@ export class Tab1Page {
         this.d = Math.pow((this.a + this.b + this.c), 3);
       else 
         this.d = (this.a + this.b + this.c)
+
     }
     catch (error) {
       console.log(error);
       
     }
+
   }
 }
 
