@@ -1,0 +1,52 @@
+<form [formGroup]="SubjectForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>ДИСЦИПЛІНА</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Назва: </ion-label>
+          <ion-input id="subject_name" type="text" formControlName="SubjectName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Кількість кредитів </ion-label> 
+          <ion-input id="number_of_credits" type="number" formControlName="SubjectNumberOfCredits"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">ПІБ викладача </ion-label>
+          <ion-input id="teacher_name" type="text" formControlName="SubjectTeacherName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Звання викладача </ion-label>
+          <ion-input id="rank" type="text" formControlName="SubjectRank"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Номер семестру </ion-label>
+          <ion-input id="term" type="text" formControlName="SubjectTerm"></ion-input>
+        </ion-item>
+  
+        <ion-card formArrayName="groups">
+          <ion-card-header>
+            <ion-card-title>Групи</ion-card-title>
+          </ion-card-header>
+              <ion-card-content>
+                <ion-button color="tertiary" (click)="addGroup()"> 
+                  <ion-icon slot="start" name="add"></ion-icon>
+                  Додати групу
+                </ion-button>
+                <ion-item *ngFor="let book of getControls(); let i = index">
+                  <ion-input type="text" formControlName={{i}} placeholder="назва групи"></ion-input>
+                  <ion-button color="tertiary" (click)="deleteGroup(i)"> 
+                    <ion-icon slot="start" name="trash"></ion-icon>
+                    Видалити
+                  </ion-button>
+                </ion-item>
+              </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+    <ion-button type="submit" color="my-color" 
+    expand="block" fill="outline" [disabled]="!SubjectForm.valid">
+      Submit
+    </ion-button>
+  </form>

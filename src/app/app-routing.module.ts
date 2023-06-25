@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: 'graph',
     loadChildren: () => import('./graph/graph.module').then( m => m.GraphPageModule)
-  },  {
+  },
+  {
     path: 'file',
     loadChildren: () => import('./file/file.module').then( m => m.FilePageModule)
   },
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'servicepage',
     loadChildren: () => import('./servicepage/servicepage.module').then( m => m.ServicepagePageModule)
+  },
+  {
+    path: 'reactform',
+    loadChildren: () => import('./reactform/reactform.module').then( m => m.ReactformPageModule)
   }
 
 ];
